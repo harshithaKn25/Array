@@ -1,0 +1,92 @@
+1.Reverse an array
+     Input: 10 20 30 40 50
+    Output:50 40 30 20 10 
+
+-------------------------------------------------------
+steps:
+s1->take i as 0 and j as n-1
+s2->swap a[i] and a[j] 
+      i++ ,j--
+s3->do step 2 unti; i==j
+-------------------------------------------------------
+c code
+-------
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    printf("Enter array size: ");
+    scanf("%d", &n);
+
+    int a[n];  // Declare the array after getting the size
+    printf("Enter array elements: ");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    // Reverse the array
+    int temp;
+    int j = n - 1;
+    i = 0;  // Initialize i before starting the loop
+    while (i < j) {  // Use i < j to avoid unnecessary swaps
+        temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+        i++;
+        j--;
+    }
+
+    printf("The reversed array is: ");
+    for (i = 0; i < n; i++) {
+        printf("%d ", a[i]);  // Print elements with a space separator for readability
+    }
+    printf("\n");
+
+    return 0;
+}
+
+----------------------------------------------------------------------------------------------------
+java code
+---------
+import java.util.Scanner;
+
+public class ReverseArray {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the size of the array
+        System.out.print("Enter array size: ");
+        int n = scanner.nextInt();
+
+        // Declare the array
+        int[] array = new int[n];
+
+        // Read the array elements
+        System.out.println("Enter array elements: ");
+        for (int i = 0; i < n; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        // Reverse the array
+        int i = 0;
+        int j = n - 1;
+        while (i < j) {
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+            i++;
+            j--;
+        }
+
+        // Print the reversed array
+        System.out.print("The reversed array is: ");
+        for (int element : array) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+        
+        // Close the scanner to prevent resource leak
+        scanner.close();
+    }
+}
+
