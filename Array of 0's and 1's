@@ -1,0 +1,50 @@
+3.move all 0’s to starting and all 1’s to end of an array
+Segregate 0s and 1s | Practice | GeeksforGeeks
+    Input: 0 1 1 0 0 1 0 1
+   Output:0 0 0 0 1 1 1 1 
+
+---------------------------------------------------------------
+steps:
+s1->if arr[i] is 0 and arr[j] is 1 then i++,j++
+    if(arr[i] is 1 and arr[j] is 0 then j++
+    if(arr[i] is 1 and arr[j] is 1 then i++
+    else
+      i++,j++
+
+s2->continue step 1 until j is less than size of an array
+----------------------------------------------------------------
+
+c++ code
+class Solution 
+{
+    void segregate0and1(int[] arr, int n) 
+    {
+        int j=1;
+        int temp=0;
+        for(int i=0;j<n;)
+        {
+            if(arr[i]==0&& arr[j]==1)
+            {
+                i++;
+                j++;
+            }
+            else if(arr[i]==1 && arr[j]==0)
+            {
+              temp=arr[i];
+              arr[i]=arr[j];
+              arr[j]=temp;
+              i++;
+            }
+            else if(arr[i]==1 && arr[j]==1)
+            {
+                j++;
+            }
+            else
+            {
+                i++;
+                j++;
+            }
+        }
+    }
+
+}
