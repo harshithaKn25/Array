@@ -1,0 +1,28 @@
+5.an array contain 0’s and +ve integers , move all 0’s to starting and do not change the order of non-zero elements.
+   Input:10 0 2 3 0 4 5 0
+   Output:0 0 0 10 2 3 4 5 
+---------------------------------------------------------------------------------------------
+steps:
+s1->let i and j be 0
+s2->if(nums[i] is 0 ,do nothing
+   
+    if(nums[i] is not 0 ,then swap
+     j++
+---------------------------------------------------------------------------------------------
+code
+------
+void moveZeroes(int* nums, int numsSize) 
+{
+    int j=0;
+    int i;
+    for(i=0;i<numsSize;i++)
+    {
+        if(nums[i] !=0)
+        {
+            int temp=nums[i];
+            nums[i]=nums[j];
+            nums[j]=temp;
+            j++;
+        }
+    }
+}
