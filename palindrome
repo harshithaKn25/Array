@@ -1,0 +1,35 @@
+9.check wether a number is palindrome or not #LC 9
+I: 1221
+O:yes
+------------------------------------------------------
+steps
+s1->put that integer into the array of charecters
+s2->1 2 2 1
+    i      j
+    place i at 0 and j at 3
+s3->check if(a[i] ==a[j)
+           i++,j--
+     else
+       retuen false
+
+s4->return true
+----------------------------------------------------
+code
+-------
+bool isPalindrome(int n) {
+    // Convert integer to string to check palindrome
+    char str[20];
+    sprintf(str, "%d", n);
+    
+    int i = 0, j = strlen(str) - 1;
+    while (i < j) {
+        if (str[i] == str[j]) {
+            i++;
+            j--;
+        } else {
+            return false;
+        }
+    }
+   
+    return true;
+}
