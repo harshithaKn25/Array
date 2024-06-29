@@ -1,0 +1,53 @@
+11.check the array is palindromic array or not         #GFG
+I: 121  111 141
+O:yes
+
+I: 121  141  181  20
+O: no
+---------------------------------------------------------------------
+STEPS:
+s1->121 111 141 is our input 
+s2->let us travel through the array from oth index to 2nd index
+     i =0 ,i<n,i++
+s3->create one char array that stores value of i th index
+s4->now an char array with elements 1 2 1 is created
+s5->check the 121 is palindrome or not 
+     if its palindrome then count++
+s6->follow the steps from s2 to 5 till i reached the end of an array
+s6->if count == n 
+    then the given array is a palindromic array
+------------------------------------------------------------------
+JAVA CODE
+----------
+class GfG
+{
+	public static int palinArray(int[] a, int n)
+           {
+               int count=0;
+                  for (int i = 0; i < n; i++) {
+            String str = String.valueOf(a[i]); // Convert the number to a string
+            int length = str.length();
+            boolean isPalindrome = true; // Assume the number is a palindrome
+
+            // Check if the string is a palindrome
+            for (int j = 0, k = length - 1; j < k; j++, k--) {
+                if (str.charAt(j) != str.charAt(k)) {
+                    isPalindrome = false; // Not a palindrome
+                    break;
+                }
+            }
+
+            // Increment count if the number is a palindrome
+            if (isPalindrome) {
+                count++;
+            }
+        }
+
+        // Check if all numbers in the array are palindromic
+        if (count == n) {
+           return 1;
+        } else {
+           return 0;
+        }
+           }
+}
