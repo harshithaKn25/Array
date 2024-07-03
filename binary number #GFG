@@ -1,0 +1,43 @@
+Given a non-empty sequence of characters str, return true if sequence is Binary, else return false
+
+Example 1:
+Input:
+str = 101
+Output:
+1
+Explanation:
+Since string contains only 0 and 1, output is 1.
+
+Example 2:
+Input:
+str = 75
+Output:
+0
+Explanation:
+Since string contains digits other than 0 and 1, output is 0.
+---------------------------------------------------------------------------
+steps:
+s1->as it is an char array (str),
+     travel through the array
+    take a variablr called ch
+s2->give ch the char at i th position ,str
+s3->if(charecter at ith position is not 0 AND alos not 1 then e=return fase,
+     itmeans that the given array is not a binary number array
+----------------------------------------------------------------------------
+class GfG
+{
+	boolean isBinary(String str)
+	{
+	 
+   
+        for (int i = 0; i < str.length(); i++) 
+        {
+            char ch = str.charAt(i); // Use charAt to get character at index i
+            if (ch != '0' && ch != '1')
+            { // Check if character is neither '0' nor '1'
+                return false;
+            }
+        }
+        return true; // Return true if all characters are '0' or '1'
+    }
+}
