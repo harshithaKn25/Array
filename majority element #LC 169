@@ -1,0 +1,26 @@
+12. find the majority element in an array           #LC 169
+I:  2 3 4 4 5 4 4 
+O:4
+--------------------------------------------------------------------
+int majorityElement(int* a, int n) 
+{
+    int candidate = a[0];
+    int count = 1;
+    for(int i = 1; i < n; i++) 
+    {
+        if(a[i] == candidate) 
+        {
+            count++;
+        } 
+        else 
+        {
+            count--;
+            if(count == 0) 
+            {
+                candidate = a[i];
+                count = 1;
+            }
+        }
+    }
+    return candidate;
+}
