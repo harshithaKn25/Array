@@ -1,0 +1,19 @@
+13. Write a program to find the sum of the given series 1+2+3+ . . . . . . (n terms) 
+
+Input: n = 1
+Output: 1
+Explanation: For n = 1, the sum will be 1.
+--------------------------------------------------------------------------------------
+use formula :n*(n+1)/2
+-----------------------------
+
+class Solution {
+  public:
+  
+    long long seriesSum(long n) 
+    {
+        n=n*(n+1)/2;
+        
+    }
+};
+
